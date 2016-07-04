@@ -26,10 +26,11 @@ const Grid = React.createClass({
   render() {
     let ComponentClass = this.props.componentClass;
     let className = this.props.fluid ? 'container-fluid' : 'container';
+    const { componentClass, fluid, ...rest } = this.props;
 
     return (
       <ComponentClass
-        {...this.props}
+        {...rest}
         className={classNames(this.props.className, className)}>
         {this.props.children}
       </ComponentClass>
